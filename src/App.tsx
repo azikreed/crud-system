@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+// import 'semantic-ui-css/semantic.min.css';
+import Create from "./components/create/create";
+import Read from "./components/read/read";
+import Update from "./components/update/update";
+import Delete from "./components/delete/delete";
+
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="main">
+        <div>
+          <h3>React Crud Operations</h3>
+        </div>
+        <Route exact path="/" component={Create} />
+        <Route path="/read" component={Read} />
+        <Route path="/update" component={Update} />
+        <Route path="/delete" component={Delete} />
+      </div>
+    </Router>
   );
 }
 
